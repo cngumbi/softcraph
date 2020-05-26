@@ -12,7 +12,7 @@ setup(
     keywords = "flask, softcraze"
     url = ""
     packages = ""
-    long_description = ""
+    long_description = "the software is to manage all of the companies resource online"
     classifiers = [
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
