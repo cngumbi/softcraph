@@ -1,7 +1,10 @@
 from flask import Flask, request
+from application.users.views import users
 
 app = Flask(__name__)
+app.register_blueprint(users, url_prefix='/users')
 
+#local packages
 import application.models
 import application.views
 from application import app
