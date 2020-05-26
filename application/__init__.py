@@ -2,6 +2,9 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+import application.models
+import application.views
+from application import app
 
 @app.route('/')
 def hello():
