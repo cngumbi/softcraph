@@ -1,14 +1,20 @@
-from flask import Flask, request
-from application.users.views import users
+from flask import Flask
+from flask.ext.sqlalchemy import sqlalchemy
+#from application.users.views import users
 
 app = Flask(__name__)
-app.register_blueprint(users, url_prefix='/users')
+
+#configer the sql database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../softcraze.db'
+db = SQLAlchemy(app)
+#app.register_blueprint(users, url_prefix='/users')
 
 #local packages
-import application.models
-import application.views
-from application import app
+#import application.models
+#import application.views
+#from application import app
 
+"""
 @app.route('/')
 def hello():
     return "hello world"
@@ -27,6 +33,6 @@ def login():
     else:
         #display login form
         pass
-
+"""
 if __name__ == "__main__":
     app.run()
