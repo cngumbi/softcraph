@@ -1,5 +1,5 @@
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from application import db
 #from application.users.views import users
 
@@ -12,16 +12,6 @@ db = SQLAlchemy(app)
 
 #local packages
 #import application.models
-#import application.views
-#from application import app
-
-"""
-@app.route('/')
-def hello():
-    return "hello world"
-
-#create the contact route to handle contacts
-@app.route('/contact')
 def contact():
     return "my contacts"
 
