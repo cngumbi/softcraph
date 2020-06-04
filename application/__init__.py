@@ -1,5 +1,6 @@
 from flask import Flask
-from flask.ext.sqlalchemy import sqlalchemy
+from flask.ext.sqlalchemy import SQLAlchemy
+from application import db
 #from application.users.views import users
 
 app = Flask(__name__)
