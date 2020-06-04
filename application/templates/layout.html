@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <table>SOFTCRAZE</table>
+    </head>
+    <body>
+        <h1>SOFTCRAZE</h1>
+        <!--create the body of the form-->
+        {% for message in get_flasked_message() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% if not current_user.is_authenticated() %}
+        <a href="{{ url_for('user.login') }}"> login </a>
+        {% else %}
+        <a href="{{ url_for('users.logout') }}"> logout </a>
+        {% endif %}
+
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

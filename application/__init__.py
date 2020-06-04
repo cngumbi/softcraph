@@ -8,6 +8,8 @@ app = Flask(__name__)
 
 #configer the sql database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../softcraze.db'
+#you can implimet os.urandom to generate the SECRET_KEY code()
+app.config['SECRET_KEY'] = "&\xfb?\xfbL\xd7\xc0z\x19ewF\xdd\xe6\xce(M\xbc\x15,"
 db = SQLAlchemy(app)
 
 
@@ -18,25 +20,10 @@ flask_bcrypt = Bcrypt()
 #local modules
 from application.users import models as user_models
 from application.users.views import users
-#app.register_blueprint(users, url_prefix='/users')
+app.register_blueprint(users, url_prefix='/users')
 
 #loading a user from the database
 @login_manager.user_loader
 def load_user(user_id):
     return application.user_models.query.get(int(user_id))
-"""def contact():
-    return "my contacts"
 
-#create route to handle login
-@app.route('/login', methods =['GET', 'POST'])
-def login():
-    if request.methods == 'POST':
-        #logic to handle login
-        pass
-    else:
-        #display login form
-        pass
-    """
-"""
-if __name__ == "__main__":
-    app.run()

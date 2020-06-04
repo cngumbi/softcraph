@@ -1,8 +1,9 @@
 import datetime
-from application import db
+from application import db, flask_bcrypt
+from sqlalchemy.ext.hybrid import hybrid_property
 
 #create class user
-class User(db.model):
+class User(db.Model):
     #the primarykey of the users
     id = db.Column(db.Integer, primarykey = True)
 
@@ -13,10 +14,25 @@ class User(db.model):
     username = db.Column(db.String(40), unique = True)
 
     #unique unse passwords
-    password = db.Column(db.String(40))
+    #hash the password
+    _password = db.Column(password, db.String(60))
 
     #date and time the account was created
     created_on = db.Column(db.DataTime, default = datetime.datetime.utcnow)
+
+
+    
+    @hybrid_property
+    def password(self):
+        """The bcrypt'ed password of the given user"""
+    
+
+        return self._password
+    @password.setter
+    def password(self, password):
+        """bcrypt the password on assignment"""
+        self._password = flask_bcrypt.generate_password_hash(password)
+
 
     def __repr__(self):
         return '<User {!r}>'.format(self.username)
