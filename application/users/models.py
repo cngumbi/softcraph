@@ -1,25 +1,31 @@
 import datetime
+from sqlalchemy.sql import func
 from application import db, flask_bcrypt
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, DateTime
 from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy.ext.declarative import declarative_base
 
+Base = declarative_base()
 #create class user
 class User(db.Model):
     #the primarykey of the users
-    id = db.Column(db.Integer, primary_key = True)
+    id = Column(Integer, primary_key = True)
 
     #unique email for he users
-    email = db.Column(db.String(255), unique = True, nullable=False)
+    email = Column(db.String(255), unique = True, nullable=False)
 
     #unique usernames for each user
-    username = db.Column(db.String(40), unique = True, nullable=False)
+    username = Column(db.String(40), unique = True, nullable=False)
 
     #unique unse passwords
     #hash the password
-    _password = db.Column('password', db.String(60))
+    _password = Column('password', db.String(60))
 
     #date and time the account was created
-    created_on = db.Column(db.DataTime, default = datetime.datetime.utcnow)
+    #created_on = Column(DataTime, default = datetime.datetime.utcnow)
+    
+    created_on = Column(DateTime(timezone=True), server_default=func.now())
+    updated_on = Column(DateTime(timezone=True), onupdate=func.now())
 
 
     
@@ -57,3 +63,7 @@ class User(db.Model):
     def get_id(self):
         """Get user ID as a Unicode string"""
         return unicode(self.id)
+
+    
+    #initialize the database
+   #db.create_all()

@@ -7,7 +7,7 @@ from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired, Length
 
 #import local models
-from models import User 
+#from models import User 
 from application import flask_bcrypt
 
 
@@ -23,7 +23,7 @@ class LoginForm(Form):
     username = StringField('username', validators=[DataRequired()])
     password = PasswordField('password', validators=[DataRequired(),Length(min=16)])
 
-    @users.rout('/login', methods=['GET', 'POST'])
+    @users.route('/login', methods=['GET', 'POST'])
     def login():
         """
         basic user login functionality
@@ -35,31 +35,30 @@ class LoginForm(Form):
 
         """
 
-    def current_user.is_authenticated():
-        return redirect(url_for('softcraze.listing'))
+        if current_user.is_authenticated():
+            return redirect(url_for('softcraze.listing'))
 
 
-    form = LoginForm()
-    if form.validate_on_submit():
+        form = LoginForm()
+        if form.validate_on_submit():
 
-        user = User.query.filter_by(username=form.username).first()
+            user = User.query.filter_by(username=form.username).first()
 
-        if not user:
-            flash("NO such user exists")
-            return render_template('users/login.html', form=form)
+            if not user:
+                flash("NO such user exists")
+                return render_template('users/login.html', form=form)
 
-        if(not flask_bcrypt.check_password_hash(user.password, form.password.data)):
-            flash("Invalid password")
-            return render_template('users/login.html', form=form)
+            if(not flask_bcrypt.check_password_hash(user.password, form.password.data)):
+                flash("Invalid password")
+                return render_template('users/login.html', form=form)
 
-        login_user(user, remember=True)
-        flash("Success! You're logged in.")
-        return redirect(url_for("softcraze.listing"))
+            login_user(user, remember=True)
+            flash("Success! You're logged in.")
+            return redirect(url_for("softcraze.listing"))
+        return render_template('users/login.html', form=form)
 
-    return render_template('users/login.html', form=form)
 
-
-    @users.rout('/logout', methods=['GET'])
+    @users.route('/logout', methods=['GET'])
     def logout():
         lotout_user()
         return redirect(url_for(('softcraze.listing')))
