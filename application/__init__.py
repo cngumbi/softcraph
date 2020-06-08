@@ -22,8 +22,13 @@ from application.users import models as user_models
 from application.users.views import users
 app.register_blueprint(users, url_prefix='/users')
 
+#db.init_app(app)
+
 #loading a user from the database
 @login_manager.user_loader
 def load_user(user_id):
     return application.user_models.query.get(int(user_id))
 
+
+def create_app():
+    return db.create_all()
