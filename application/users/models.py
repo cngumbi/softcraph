@@ -16,7 +16,7 @@ class User(db.Model):
 
     #unique unse passwords
     #hash the password
-    _password = db.Column(password, db.String(60))
+    _password = db.Column('password', db.String(60))
 
     #date and time the account was created
     created_on = db.Column(db.DataTime, default = datetime.datetime.utcnow)
@@ -30,7 +30,7 @@ class User(db.Model):
 
 
     @password.setter
-    def password(self, _password):
+    def password(self, password):
         """bcrypt the password on assignment"""
         self._password = flask_bcrypt.generate_password_hash(password)
 

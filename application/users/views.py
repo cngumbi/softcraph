@@ -23,17 +23,17 @@ class LoginForm(Form):
     username = StringField('username', validators=[DataRequired()])
     password = PasswordField('password', validators=[DataRequired(),Length(min=16)])
 
-@users.rout('/login', methods=['GET', 'POST'])
-def login():
-    """
-    basic user login functionality
+    @users.rout('/login', methods=['GET', 'POST'])
+    def login():
+        """
+        basic user login functionality
 
-    we redirect the user to the default softcraze index.html if loged in
+        we redirect the user to the default softcraze index.html if loged in
 
-    we submited the user info if not loded in the call the validate_on_submit()
-    to make sure the data matches
+        we submited the user info if not loded in the call the validate_on_submit()
+        to make sure the data matches
 
-    """
+        """
 
     def current_user.is_authenticated():
         return redirect(url_for('softcraze.listing'))
