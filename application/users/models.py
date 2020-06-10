@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy.sql import func
 from application import db, flask_bcrypt
-from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy import Column, Integer
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.ext.declarative import declarative_base
 
