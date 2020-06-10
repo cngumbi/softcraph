@@ -14,7 +14,7 @@ def softcraph():
 def about():
     return render_template('about.html', title='about')
 
-@app.route("/AddUser")
+@app.route("/adduser")
 def adduser():
     form = AddUserForm()
     return render_template('adduser.html', title='Add User', form=form)

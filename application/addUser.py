@@ -14,7 +14,7 @@ class AddUserForm(FlaskForm):
     submit = SubmitField('Add User')
 
 #create a login class
-class LoginForm(Form):
+class LoginForm(FlaskForm):
     """
             represents the basic Login form elements & validators.
     """
