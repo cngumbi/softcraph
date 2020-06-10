@@ -67,6 +67,3 @@ class User(db.Model):
     def get_id(self):
         """Get user ID as a Unicode string"""
         return unicode(self.id)
-
-    
-
