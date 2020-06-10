@@ -65,5 +65,4 @@ class User(db.Model):
         return unicode(self.id)
 
     
-    #initialize the database
-   #db.create_all()
+
