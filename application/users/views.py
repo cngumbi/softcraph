@@ -45,6 +45,7 @@ def login():
     to make sure the data matches
     """
 
+    """
     if current_user.is_authenticated():
         return redirect(url_for('softcraze.listing'))
 
@@ -65,7 +66,14 @@ def login():
         login_user(user, remember=True)
         flash("Success! You're logged in.")
         return redirect(url_for("softcraze.listing"))
-    
+        """
+    form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+            flash('You have been logged in!', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Login Unsuccessful. PLease check username and password', 'danger')    
     return render_template('users/login.html', form=form)
 
 
