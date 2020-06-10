@@ -14,6 +14,17 @@ def softcraph():
 def about():
     return render_template('about.html', title='about')
 
+@app.route("/AddUser")
+def adduser():
+    form = AddUserForm()
+    return render_template('adduser.html', title='Add User', form=form)
+
+
+@app.route("/login")
+def login():
+    form = LoginForm()
+    return render_template('Login.html', title='Login', form=form)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
