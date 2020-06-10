@@ -14,12 +14,14 @@ def create_app(config=None):
     app.config['SECRET_KEY'] = "&\xfb?\xfbL\xd7\xc0z\x19ewF\xdd\xe6\xce(M\xbc\x15,"
     db = SQLAlchemy(app)
 
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    flask_bcrypt = Bcrypt(app)
+
     return app
 
 
-login_manager = LoginManager()
-login_manager.init_app(app)
-flask_bcrypt = Bcrypt()
+
 
 #local modules
 from application.users import models as user_models
