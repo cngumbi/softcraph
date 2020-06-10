@@ -3,13 +3,18 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 
+def create_app(config=None):
+    app = Flask(__name__)
 
-app = Flask(__name__)
-#configer the sql database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../softcraze.db'
-#you can implimet os.urandom to generate the SECRET_KEY code()
-app.config['SECRET_KEY'] = "&\xfb?\xfbL\xd7\xc0z\x19ewF\xdd\xe6\xce(M\xbc\x15,"
-db = SQLAlchemy(app)
+    if config is not None:
+        app.config.form_object(config)
+    #configer the sql database
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../softcraze.db'
+    #you can implimet os.urandom to generate the SECRET_KEY code()
+    app.config['SECRET_KEY'] = "&\xfb?\xfbL\xd7\xc0z\x19ewF\xdd\xe6\xce(M\xbc\x15,"
+    db = SQLAlchemy(app)
+
+    return app
 
 
 login_manager = LoginManager()

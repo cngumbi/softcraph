@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy.sql import func
 from application import db, flask_bcrypt
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, DateTime
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -25,10 +25,10 @@ class User(db.Model):
     _password = db.Column('password', db.String(60), nullable=False)
 
     #date and time the account was created
-    created_on = db.Column(db.DataTime, nullable=False, default=datetime.utcnow)
+   #created_on = db.Column(DataTime, nullable=False, default=datetime.utcnow)
     
-    """created_on = Column(DateTime(timezone=True), server_default=func.now())
-    updated_on = Column(DateTime(timezone=True), onupdate=func.now())"""
+    created_on = Column(DateTime(timezone=True), server_default=func.now())
+    updated_on = Column(DateTime(timezone=True), onupdate=func.now())
 
 
     
