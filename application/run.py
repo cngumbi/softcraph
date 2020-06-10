@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for
+from addUser import AddUserForm, LoginForm
 app = Flask(__name__)
 
 #configer the secrect key

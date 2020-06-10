@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 #create a registration class
-class add_userForm(FlaskForm):
+class AddUserForm(FlaskForm):
     """to add a new user to the platform"""
 
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
