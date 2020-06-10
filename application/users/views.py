@@ -2,7 +2,7 @@ from flask import (Blueprint, flash, render_template, url_for, redirect, g)
 
 from flask_login import login_user, logout_user, current_user
 
-from flask_wtf import FlaskForm
+from flask_wtf import Form
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
@@ -15,7 +15,7 @@ from application import flask_bcrypt
 users = Blueprint('users', __name__, template_folder='templates')
 
 #create a registration class
-class add_userForm(FlaskForm):
+class add_userForm(Form):
     """to add a new user to the platform"""
 
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
@@ -26,7 +26,7 @@ class add_userForm(FlaskForm):
 
 
 #create a login class
-class LoginForm(FlaskForm):
+class LoginForm(Form):
     """
             represents the basic Login form elements & validators.
     """
