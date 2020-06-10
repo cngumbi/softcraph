@@ -5,7 +5,6 @@ from flask_bcrypt import Bcrypt
 
 
 app = Flask(__name__)
-
 #configer the sql database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../softcraze.db'
 #you can implimet os.urandom to generate the SECRET_KEY code()
