@@ -9,7 +9,7 @@ class AddUserForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email', validators=[DataRequired(), Email()])
     #email = StringField('Email', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired(),Length(min=16)])
+    password = PasswordField('Password', validators=[DataRequired(),Length(min=6, max=8)])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Add User')
 
@@ -21,6 +21,6 @@ class LoginForm(FlaskForm):
 
     #email = StringField('Email', validators=[DataRequired() """, Email()"""])
     email = StringField('Email', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired(),Length(min=16)])
+    password = PasswordField('Password', validators=[DataRequired(),Length(min=6, max=8)])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
