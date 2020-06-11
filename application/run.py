@@ -29,7 +29,7 @@ def login():
     if form.validate_on_submit():
         if form.email.data == 'admin@blog.com' and form.password.data == 'password':
             flash('You have been logged in!', 'success')
-            return redirect(url_for('softcraze'))
+            return redirect(url_for('softcraph'))
         else:
             flash('Login Unsuccessful. PLease check username and password', 'danger') 
     return render_template('Login.html', title='Login', form=form)
