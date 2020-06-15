@@ -1,17 +1,3 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
-from addUser import AddUserForm, LoginForm
-
-
-app = Flask(__name__)
-#configer the secrect key
-app.config['SECRET_KEY'] = "&\xfb?\xfbL\xd7\xc0z\x19ewF\xdd\xe6\xce(M\xbc\x15,"
-#set the configaration of the database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///softcraze.db'
-#create a database instance
-db = SQLAlchemy(app)
-
-
 #custom libaries
 from models import User, Project
 
@@ -45,6 +31,3 @@ def login():
             flash('Login Unsuccessful. PLease check username and password', 'danger') 
     return render_template('Login.html', title='Login', form=form)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
