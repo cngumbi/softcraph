@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, DateTime
 from addUser import AddUserForm, LoginForm
 
 

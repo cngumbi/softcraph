@@ -1,5 +1,6 @@
 from datetime import datetime
-from app import db
+from sqlalchemy import Column, Integer, DateTime
+from __main__ import db
 
 
 #create a class for User
