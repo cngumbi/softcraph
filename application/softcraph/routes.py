@@ -1,5 +1,9 @@
+from flask import render_template, url_for, flash, redirect
+
 #custom libaries
-from models import User, Project
+from softcraph import app
+from softcraph.addUser import AddUserForm, LoginForm
+from softcraph.models import User, Project
 
 @app.route("/")
 @app.route("/home")
