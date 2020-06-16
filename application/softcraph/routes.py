@@ -1,10 +1,11 @@
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, request 
+from flask_login import login_user, current_user, logout_user, login_required
 
 #custom libaries
 from softcraph import app, db, bcrypt
 from softcraph.addUser import AddUserForm, LoginForm
 from softcraph.models import User, Project
-from flask_login import login_user
+
 
 @app.route("/")
 @app.route("/home")
@@ -13,7 +14,7 @@ def softcraph():
 
 
 @app.route("/staff")
-def softcraph():
+def staff():
     return render_template('staff.html')
 
 
@@ -36,12 +37,27 @@ def adduser():
 
 @app.route("/login",methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('staff'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            return redirect(url_for('staff'))
-        flash('Login Unsuccessful. PLease check username and password', 'danger') 
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('staff'))
+        else:
+            flash('Login Unsuccessful. PLease check email and password', 'danger') 
     return render_template('Login.html', title='Login', form=form)
 
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
+
+@app.route("/account")
+@login_required
+def account():
+    return render_template('account.html', title='Account')
