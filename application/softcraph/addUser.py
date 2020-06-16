@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from softcraph.models import User
 
 #create a registration class
 class AddUserForm(FlaskForm):
@@ -12,6 +13,17 @@ class AddUserForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired(),Length(min=6, max=8)])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Add User')
+
+    def validate_field(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError('Username is taken ')
+
+    
+    def validate_field(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user:
+            raise ValidationError('Email is taken ')
 
 #create a login class
 class LoginForm(FlaskForm):
