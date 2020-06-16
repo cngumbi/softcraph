@@ -1,6 +1,6 @@
 from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime
-from softcraph import db
+from softcraph import db, login_manager
 
 
 #create a class for User

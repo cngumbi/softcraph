@@ -14,13 +14,14 @@ class AddUserForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Add User')
 
-    def validate_field(self, username):
+    #username validation if taken
+    def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:
             raise ValidationError('Username is taken ')
 
-    
-    def validate_field(self, email):
+    #email validation if taken
+    def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('Email is taken ')
