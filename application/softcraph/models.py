@@ -1,10 +1,15 @@
 from datetime import datetime
 from sqlalchemy import Column, Integer, DateTime
 from softcraph import db, login_manager
+from flask_login import UserMixin
 
+#load the users
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 #create a class for User
-class User(db.Model):
+class User(db.Model, UserMixin):
     #the primarykey of the users
     id = db.Column(db.Integer, primary_key = True)
     #unique usernames for each user

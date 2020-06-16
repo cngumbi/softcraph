@@ -4,11 +4,17 @@ from flask import render_template, url_for, flash, redirect
 from softcraph import app, db, bcrypt
 from softcraph.addUser import AddUserForm, LoginForm
 from softcraph.models import User, Project
+from flask_login import login_user
 
 @app.route("/")
 @app.route("/home")
 def softcraph():
     return render_template('home.html')
+
+
+@app.route("/staff")
+def softcraph():
+    return render_template('staff.html')
 
 
 @app.route("/about")
@@ -32,10 +38,10 @@ def adduser():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
-            flash('You have been logged in!', 'success')
-            return redirect(url_for('softcraph'))
-        else:
-            flash('Login Unsuccessful. PLease check username and password', 'danger') 
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.remember.data)
+            return redirect(url_for('staff'))
+        flash('Login Unsuccessful. PLease check username and password', 'danger') 
     return render_template('Login.html', title='Login', form=form)
 
