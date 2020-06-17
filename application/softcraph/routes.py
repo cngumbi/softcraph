@@ -10,7 +10,7 @@ from softcraph.models import User, Project
 @app.route("/")
 @app.route("/home")
 def softcraph():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route("/staff")

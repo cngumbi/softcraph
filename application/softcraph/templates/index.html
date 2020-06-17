@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Reveal</title>
+  <title>softcraze</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -85,7 +85,12 @@
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
-		  <li><a href="loginindex.php">login</a></li>
+          {% if current_user.is_authenticated %}
+          <li><a href="{{url_for('account')}}">Account</a></li>
+          <li><a href="{{url_for('logout')}}">Logout</a></li>
+          {% else %}
+          <li><a href="{{url_for('login')}}">login</a></li>
+          {% endif %}
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
