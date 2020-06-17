@@ -20,14 +20,16 @@ def softcraph():
     portF_4 =os.path.join(app.config['UPLOAD_FOLDER'], '4.jpg')
     #client images
     about =os.path.join(app.config['UPLOAD_FOLDER'], 'about_img.jpg')
+    client_1 =os.path.join(app.config['UPLOAD_FOLDER'], 'jwc.png')
     client_2 =os.path.join(app.config['UPLOAD_FOLDER'], 'dyt.png')
     #testimonials
-    testimonial =os.path.join(app.config['UPLOAD_FOLDER'], 'EdithMweruNduritu.jpeg')
+    testimonial =os.path.join(app.config['UPLOAD_FOLDER'], 'EdithMweruNduritu.jpg')
     #user_profile image
     image_file = url_for('static', filename='img/' + current_user.image_file)
-    return render_template('index.html', image_files=image_file, portfolio_1=portF_1, portfolio_2=portF_2,
-                                portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch, about_1=about,
-                                client2=client_2, testimony=testimonial)
+    return render_template('index.html',
+                                image_files=image_file, portfolio_1=portF_1, portfolio_2=portF_2,
+                                portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch,
+                                about1=about, client2=client_2, client1=client_1, testimony=testimonial)
 
 
 @app.route("/staff")
