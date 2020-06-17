@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request 
 from flask_login import login_user, current_user, logout_user, login_required
-
+import os
 #custom libaries
 from softcraph import app, db, bcrypt
 from softcraph.addUser import AddUserForm, LoginForm
@@ -10,8 +10,21 @@ from softcraph.models import User, Project
 @app.route("/")
 @app.route("/home")
 def softcraph():
-    image_manage = url_for('static', filename='img/' + image_manage)
-    return render_template('index.html', image_files=image_manage)
+    #setting the path tho the image files
+    portF_1 =os.path.join(app.config['UPLOAD_FOLDER'], '1.jpg')
+    portF_2 =os.path.join(app.config['UPLOAD_FOLDER'], '2.jpg')
+    portF_3 =os.path.join(app.config['UPLOAD_FOLDER'], '3.jpg')
+    portF_4 =os.path.join(app.config['UPLOAD_FOLDER'], '4.jpg')
+    #client images
+    client_1 =os.path.join(app.config['UPLOAD_FOLDER'], 'jwc.png')
+    client_2 =os.path.join(app.config['UPLOAD_FOLDER'], 'dyt.png')
+    #testimonials
+    testimonial =os.path.join(app.config['UPLOAD_FOLDER'], 'EdithMweruNduritu.jpeg')
+    #user_profile image
+    image_file = url_for('static', filename='img/' + current_user.image_file)
+    return render_template('index.html', image_files=image_file, portfolio_1=portF_1, portfolio_2=portF_2,
+                                portfolio_3=portF_3, portfolio_4=portF_4, client1=client_1, client2=client_2, 
+                                testimony=testimonial)
 
 
 @app.route("/staff")

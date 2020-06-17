@@ -2,9 +2,14 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+import os
 
 
 app = Flask(__name__)
+#define the direction of the images
+imgFolder = os.path.join('static', 'img')
+#configer the upload image
+app.config['UPLOAD_FOLDER'] = imgFolder
 #configer the secrect key
 app.config['SECRET_KEY'] = "&\xfb?\xfbL\xd7\xc0z\x19ewF\xdd\xe6\xce(M\xbc\x15,"
 #set the configaration of the database
