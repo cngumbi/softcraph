@@ -19,7 +19,7 @@ def softcraph():
     portF_3 =os.path.join(app.config['UPLOAD_FOLDER'], '3.jpg')
     portF_4 =os.path.join(app.config['UPLOAD_FOLDER'], '4.jpg')
     #client images
-    about =os.path.join(app.config['UPLOAD_FOLDER'], 'about-img.jpg')
+    about =os.path.join(app.config['UPLOAD_FOLDER'], 'about_img.jpg')
     client_2 =os.path.join(app.config['UPLOAD_FOLDER'], 'dyt.png')
     #testimonials
     testimonial =os.path.join(app.config['UPLOAD_FOLDER'], 'EdithMweruNduritu.jpeg')
