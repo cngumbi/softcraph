@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
     #image file for user profile
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     #images storage
-    image_files = db.Column(db.String(20), nullable=False, default='default.jpg')
+    image_manage = db.Column(db.String(20), nullable=False, default='team-2.jpg')
     #unique user passwords
     #hash the password
     password = db.Column('password', db.String(60), nullable=False)

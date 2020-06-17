@@ -10,8 +10,8 @@ from softcraph.models import User, Project
 @app.route("/")
 @app.route("/home")
 def softcraph():
-    image_files = url_for('static', filename='img/')
-    return render_template('index.html', image_files=image_files)
+    image_manage = url_for('static', filename='img/' + image_manage)
+    return render_template('index.html', image_files=image_manage)
 
 
 @app.route("/staff")
