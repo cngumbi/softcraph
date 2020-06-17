@@ -26,8 +26,8 @@ def softcraph():
     #user_profile image
     image_file = url_for('static', filename='img/' + current_user.image_file)
     return render_template('index.html', image_files=image_file, portfolio_1=portF_1, portfolio_2=portF_2,
-                                portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch, about_1=about, client2=client_2, 
-                                testimony=testimonial)
+                                portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch, about_1=about,
+                                client2=client_2, testimony=testimonial)
 
 
 @app.route("/staff")
