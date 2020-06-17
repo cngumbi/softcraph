@@ -10,6 +10,9 @@ from softcraph.models import User, Project
 @app.route("/")
 @app.route("/home")
 def softcraph():
+    #Favicons
+    favics = os.path.join(app.config['UPLOAD_FOLDER'], 'favicon.png')
+    apple_touch = os.path.join(app.config['UPLOAD_FOLDER'], 'apple-touch-icon.png')
     #setting the path tho the image files
     portF_1 =os.path.join(app.config['UPLOAD_FOLDER'], '1.jpg')
     portF_2 =os.path.join(app.config['UPLOAD_FOLDER'], '2.jpg')
@@ -23,7 +26,7 @@ def softcraph():
     #user_profile image
     image_file = url_for('static', filename='img/' + current_user.image_file)
     return render_template('index.html', image_files=image_file, portfolio_1=portF_1, portfolio_2=portF_2,
-                                portfolio_3=portF_3, portfolio_4=portF_4, about_1=about, client2=client_2, 
+                                portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch, about_1=about, client2=client_2, 
                                 testimony=testimonial)
 
 

@@ -8,12 +8,14 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{ url_for('static', filename='favicon.png') }}" rel="icon">
-  <link href="{{ url_for('static', filename='apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{ favicon }" rel="icon">
+  <link href="{ apple }" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
 
+  <!--font awesome-->
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!-- Bootstrap CSS File -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- Bootstrap CSS -->
@@ -48,8 +50,8 @@
   <section id="topbar" class="d-none d-lg-block">
     <div class="container clearfix">
       <div class="contact-info float-left">
-        <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="fa fa-phone"></i> +254 712 719 781
+        <i class="fa fa-envelope-o"></i> <a href="mailto:cngumbi35@gmail.com">cngumbi35@gmail.com</a>
+        <i class="fa fa-phone" aria-hidden="true"></i> +254 712 719 781
       </div>
       <div class="social-links float-right">
         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -278,15 +280,16 @@
 
             <div class="testimonial-item">
               <p>
-                <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
+                <img src="{img/quote-sign-left.png}" class="quote-sign-left" alt="">
                 A great team which delivers what they promise
                 <img src="img/quote-sign-right.png" class="quote-sign-right" alt="">
               </p>
-              <img src="{ testimony }" class="testimonial-img" alt="">
+              <img src="img/testimonial-1.jpg" class="testimonial-img" alt="">
               <h3>Saul Goodman</h3>
               <h4>Ceo &amp; Founder</h4>
             </div>
 
+            <!--
             <div class="testimonial-item">
               <p>
                 <img src="img/quote-sign-left.png" class="quote-sign-left" alt="">
@@ -329,7 +332,7 @@
               <img src="img/testimonial-5.jpg" class="testimonial-img" alt="">
               <h3>John Larson</h3>
               <h4>Entrepreneur</h4>
-            </div>
+            </div>-->
 
         </div>
 
@@ -388,7 +391,7 @@
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+254 717 810 466">+254 717 810 466</a></p>
+              <p><a href="tel:+254 717 810 466">+254 712 719 781</a></p>
             </div>
           </div>
 
@@ -396,40 +399,11 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">john.mutata@reveal.com</a></p>
+              <p><a href="mailto:info@example.com">softcraph@gmail.com</a></p>
             </div>
           </div>
 
         </div>
-      </div>
-
-      <div class="container">
-        <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-              <div class="validation"></div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
       </div>
     </section><!-- #contact -->
 
@@ -441,7 +415,7 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>John</strong>. All Rights Reserved
+        &copy; Copyright <strong>SOFTCRAZE CORPORATION</strong>. All Rights Reserved
       </div>
        <!--  <div class="credits">
      
