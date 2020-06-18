@@ -25,8 +25,11 @@ def softcraph():
     client_4 =os.path.join(app.config['UPLOAD_FOLDER'], 'client-2.png')
     client_5 =os.path.join(app.config['UPLOAD_FOLDER'], 'client-3.png')
     client_6 =os.path.join(app.config['UPLOAD_FOLDER'], 'client-4.png')
-    #testimonials
-    testimonial =url_for('static', filename='img/EdithMweruNduritu.jpg')
+    #quotes png
+    quote_left =url_for('static', filename='img/quote-sign-left.png')
+    quote_right =url_for('static', filename='img/quote-sign-right.png')
+    #testimony png
+    edith =url_for('static', filename='img/edith.png')
     #user_profile image
     image_file = url_for('static', filename='img/default.jpg')
     #about image
@@ -34,8 +37,8 @@ def softcraph():
     return render_template('index.html',
                                 image_files=image_file, image_file1=image_files, portfolio_1=portF_1, portfolio_2=portF_2,
                                 portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch,
-                                about1=about, client2=client_2, client1=client_1, client3=client_3,
-                                client4=client_4, client5=client_5, client6=client_6, testimony=testimonial)
+                                quoteleft=quote_left, quoteright=quote_right, client2=client_2, client1=client_1, client3=client_3,
+                                client4=client_4, client5=client_5, client6=client_6, testimony=edith)
 
 
 @app.route("/staff")
