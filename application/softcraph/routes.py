@@ -11,8 +11,8 @@ from softcraph.models import User, Project
 @app.route("/home")
 def softcraph():
     #Favicons
-    favics = os.path.join(app.config['UPLOAD_FOLDER'], 'favicon.png')
-    apple_touch = os.path.join(app.config['UPLOAD_FOLDER'], 'apple-touch-icon.png')
+    favics =url_for('static', filename='img/favicon.png')
+    apple_touch =url_for('static', filename='img/apple-touch-icon.png')
     #setting the path tho the image files
     portF_1 =os.path.join(app.config['UPLOAD_FOLDER'], '1.jpg')
     portF_2 =os.path.join(app.config['UPLOAD_FOLDER'], '2.jpg')
