@@ -32,7 +32,7 @@ def softcraph():
     #about image
     image_files = url_for('static', filename='img/about_img.jpg')
     return render_template('index.html',
-                                image_files=image_file, image_file1=image_files,  portfolio_1=portF_1, portfolio_2=portF_2,
+                                image_files=image_file, image_file1=image_files, portfolio_1=portF_1, portfolio_2=portF_2,
                                 portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch,
                                 about1=about, client2=client_2, client1=client_1, client3=client_3,
                                 client4=client_4, client5=client_5, client6=client_6, testimony=testimonial)
