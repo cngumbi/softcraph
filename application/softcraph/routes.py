@@ -35,7 +35,7 @@ def softcraph():
     #user_profile image
     image_file = url_for('static', filename='img/default.jpg')
     #about image
-    image_files = url_for('static', filename='img/about_img.jpg')
+    image_files = url_for('static', filename='img/soft.png')
     return render_template('index.html',
                                 image_files=image_file, image_file1=image_files, portfolio_1=portF_1, portfolio_2=portF_2,
                                 portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch,
