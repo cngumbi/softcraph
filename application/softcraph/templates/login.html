@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="loginbox">
-        <img src="img/avatar.png" class="avatar">
         <div class="content-section">
             <form action="" method="post">
                 {{ form.hidden_tag() }}
@@ -39,7 +38,7 @@
                     </div>
                 </fieldset>
                 <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
+                    {{ form.submit(class="btn btn-success btn-block") }}
                 </div>
                 <small class="text-muted ml-2">
                     <a href="#"> Forgot Password? </a>
