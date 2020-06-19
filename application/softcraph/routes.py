@@ -32,8 +32,8 @@ def softcraph():
     edith =url_for('static', filename='img/edith.png')
     dymetrian_tech =url_for('static', filename='img/dyt.png')
     dantey_image =url_for('static', filename='img/dantey.png')
-    #user_profile image
-    image_file = url_for('static', filename='img/default.jpg')
+    #employee image
+    employee_image = url_for('static', filename='img/default.jpg')
     #about image
     image_files = url_for('static', filename='img/soft.png')
     #background image
@@ -43,7 +43,7 @@ def softcraph():
     background_4 = url_for('static', filename='img/introCarousel/4.png')
     background_5 = url_for('static', filename='img/introCarousel/5.png')
     return render_template('index.html',
-                                image_files=image_file, image_file1=image_files, portfolio_1=portF_1, portfolio_2=portF_2,
+                                employee_image1=employee_image, image_file1=image_files, portfolio_1=portF_1, portfolio_2=portF_2,
                                 portfolio_3=portF_3, portfolio_4=portF_4, favicon=favics, apple=apple_touch,
                                 quoteleft=quote_left, quoteright=quote_right, client2=client_2, client1=client_1, client3=client_3,
                                 client4=client_4, client5=client_5, client6=client_6, testimony=edith, dymetrian=dymetrian_tech,
@@ -53,7 +53,9 @@ def softcraph():
 
 @app.route("/staff")
 def staff():
-    return render_template('staff.html')
+    #user_profile image
+    image_file = url_for('static', filename='img/default.jpg' + current_user.image_file)
+    return render_template('staff.html', image_file=image_file)
 
 
 @app.route("/about")

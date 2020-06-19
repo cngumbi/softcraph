@@ -4,10 +4,38 @@
          <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{{ favicon1 }}" rel="icon">
+        <link href="{{ apple1 }}" rel="apple-touch-icon">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+        
+        <!--font awesome-->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <!--custom stylesheets-->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+        <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{{ url_for('static', filename='font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='animate.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='ionicons.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='magnific-popup.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='ionicons.min.css') }}" rel="stylesheet">
+        <!-- Main Stylesheet File -->
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 
 
 
@@ -39,13 +67,16 @@
                 <ul class="navbar-nav"> 
                   {% if current_user.is_authenticated %}
                   <li class="nav-item active">
-                    <a class="nav-link" href="{{url_for('softcraph')}}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{url_for('staff')}}">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('account')}}">Account</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('adduser')}}">Add User</a>
                   </li>
                   {% endif %}
                 </ul>
@@ -64,14 +95,33 @@
             {% endwith %}
             {% block content %}{% endblock %}
         </div>
-        
-       
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS 
+         <!-- bootstrap links-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+        <!-- JavaScript Libraries -->
+        <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='jquery-migrate.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='easing.min.js ') }}"></script>
+        <script src="{{ url_for('static', filename='hoverIntent.js ') }}"></script>
+        <script src="{{ url_for('static', filename='superfish.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='wow.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='magnific-popup.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='sticky.js') }}"></script>
+
+        <!-- Contact Form JavaScript File -->
+        <script src="{{ url_for('static', filename='contactform.js') }}"></script>
+        <!-- Template Main Javascript File -->
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+
       </body>
 
 </html>
