@@ -13,7 +13,7 @@ def softcraph():
     #Favicons
     favics =url_for('static', filename='img/SOFTCRAZE.png')
     apple_touch =url_for('static', filename='img/SOFTCRAZE.png')
-    #setting the path tho the image files
+    #setting the path to the image files
     portF_1 =os.path.join(app.config['UPLOAD_FOLDER'], '1.jpg')
     portF_2 =os.path.join(app.config['UPLOAD_FOLDER'], '2.jpg')
     portF_3 =os.path.join(app.config['UPLOAD_FOLDER'], '3.jpg')
