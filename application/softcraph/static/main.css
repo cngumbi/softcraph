@@ -35,14 +35,19 @@ body{
 .adduserbox{
     border: 0px solid #fff;
     width: 380px;
-    height: 550px;
+    height: 525px;
     background: #d3d3d3 ;
     color: #fff;
-    top: 32%;
-    margin-top: 20px;
-    margin-left: 1px; 
-    
-    
+    top: 36%;
+    left: 15%;
+    position: absolute;
+    margin-top: 20vh;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 20px 10px;
+    -webkit-box-shadow: -3px 2px 24px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 2px 24px 1px rgba(0,0,0,0.75);
+    box-shadow: -3px 2px 24px 1px rgba(0,0,0,0.75);
 }
 
 .avatar{
