@@ -58,9 +58,9 @@ def staff():
     return render_template('staff.html', image_file=image_file)
 
 
-@app.route("/about")
-def about():
-    return render_template('about.html', title='about')
+@app.route("/projects")
+def projects():
+    return render_template('projects.html', title='Projects')
 
 @app.route("/adduser",methods=['GET', 'POST'])
 def adduser():
