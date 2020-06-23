@@ -21,7 +21,7 @@ body{
     height: 480px;
     background: #d3d3d3 ;
     color: #fff;
-    top: 28%;
+    top: 32%;
     left: 50%;
     position: absolute;
     margin-top: 20vh;
@@ -31,6 +31,18 @@ body{
     -webkit-box-shadow: -3px 2px 24px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: -3px 2px 24px 1px rgba(0,0,0,0.75);
     box-shadow: -3px 2px 24px 1px rgba(0,0,0,0.75);
+}
+.adduserbox{
+    border: 0px solid #fff;
+    width: 380px;
+    height: 550px;
+    background: #d3d3d3 ;
+    color: #fff;
+    top: 32%;
+    margin-top: 20px;
+    margin-left: 1px; 
+    
+    
 }
 
 .avatar{
