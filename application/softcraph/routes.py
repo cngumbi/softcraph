@@ -23,7 +23,7 @@ def softcraph():
     client_2 =os.path.join(app.config['UPLOAD_FOLDER'], 'dyt1.png')
     client_3 =os.path.join(app.config['UPLOAD_FOLDER'], 'SOFTCRAZE.png')
     client_4 =os.path.join(app.config['UPLOAD_FOLDER'], 'talanta.png')
-    client_5 =os.path.join(app.config['UPLOAD_FOLDER'], 'client-3.png')
+    client_5 =os.path.join(app.config['UPLOAD_FOLDER'], 'KAHA_WEST_FC.jpg')
     client_6 =os.path.join(app.config['UPLOAD_FOLDER'], 'client-4.png')
     #quotes png
     quote_left =url_for('static', filename='img/quote-sign-left.png')
