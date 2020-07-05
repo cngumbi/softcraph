@@ -71,7 +71,7 @@ def adduser():
         db.session.add(user)
         db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success') 
-        return redirect(url_for('staff'))
+        return redirect(url_for('login'))
     return render_template('adduser.html', title='Add User', form=form)
 
 
