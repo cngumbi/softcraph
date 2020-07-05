@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, DateTime
 from softcraph import db, login_manager
 from flask_login import UserMixin
 
-#load the users
+#load the users / user loader to find user by ID 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
