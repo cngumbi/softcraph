@@ -52,10 +52,8 @@ def softcraph():
 
 
 @app.route("/staff")
-def staff():
-    #user_profile image
-    image_file = url_for('static', filename='img/default.jpg' + current_user.image_file)
-    return render_template('staff.html', image_file=image_file)
+def staff(): 
+    return render_template('staff.html', title='Account')
 
 
 @app.route("/projects")
@@ -100,4 +98,6 @@ def logout():
 @app.route("/account")
 @login_required
 def account():
-    return render_template('account.html', title='Account')
+    #user_profile image
+    image_file = url_for('static', filename='img/' + current_user.image_file)
+    return render_template('account.html',  image_file=image_file, title='Account')
